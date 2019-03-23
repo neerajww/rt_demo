@@ -99,7 +99,7 @@ onclick = "writeData('fileWriteAudio.php','targetDiv1')" disabled class="btn btn
 -->
 </div>
 
-    <div class="shake-chunk">Hello</div>
+    <div class="shake-chunk">:)</div>
         <div id = "targetDiv1">
     <p><br><br>  </p>
     </div>
@@ -152,27 +152,27 @@ onclick = "writeData('fileWriteAudio.php','targetDiv1')" disabled class="btn btn
     }
     
     // to read keystroke
-    document.addEventListener("keydown", keyDownTextField, false);
-    function keyDownTextField(e) {
-        var keyCode = e.keyCode;
-        if(keyCode==77) {
-            console.log("M stroke");
-            sTime  = theTimer.innerHTML; 
-            console.log(sTime);  
-            rt_time = sTime - parseInt(files_set_key[trial]);
-            console.log(rt_time);
-            if (rt_time>200) {
-            temp_str = "Your reaction time is "+rt_time+ " msec";
-                alert(temp_str);
-            }
-            else {
-                alert("False Alarm!");
-            }
-        }
-        else {
-            alert("Oh no you didn't press M");
-        }
-    }
+//    document.addEventListener("keydown", keyDownTextField, false);
+//    function keyDownTextField(e) {
+//        var keyCode = e.keyCode;
+//        if(keyCode==77) {
+//            console.log("M stroke");
+//            sTime  = theTimer.innerHTML; 
+//            console.log(sTime);  
+//            rt_time = sTime - parseInt(files_set_key[trial]);
+//            console.log(rt_time);
+//            if (rt_time>200) {
+//            temp_str = "Your reaction time is "+rt_time+ " msec";
+//                alert(temp_str);
+//            }
+//            else {
+//                alert("False Alarm!");
+//            }
+//        }
+//        else {
+//            alert("Oh no you didn't press M");
+//        }
+//    }
 
     function hitpressed() {
         console.log("M stroke");
@@ -184,8 +184,8 @@ onclick = "writeData('fileWriteAudio.php','targetDiv1')" disabled class="btn btn
         temp_str = "Your reaction time is "+rt_time+ " msec";
             alert(temp_str);
         }
-        else {
-            alert("You pressed M too fast!");
+        else (rt_time<200) {
+            alert("False Alarm!");
         }
         document.getElementById("hitPressed").disabled = true;
     }
