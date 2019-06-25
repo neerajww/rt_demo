@@ -184,7 +184,7 @@ onclick = "writeData('fileWriteAudio.php','targetDiv1')" disabled class="btn btn
         temp_str = "Your reaction time is "+rt_time+ " msec";
             alert(temp_str);
         }
-        else (rt_time<200) {
+        else if (rt_time<200) {
             alert("False Alarm!");
         }
         document.getElementById("hitPressed").disabled = true;
